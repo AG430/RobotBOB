@@ -1,115 +1,119 @@
-
-
-
 .Tuto {
-    background-color: #edebeb;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    max-width: 1500px;
-    margin: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Arial', sans-serif;
-    display: flex;
-
+  background-color: #edebeb;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  max-width: 90%; /* Largeur dynamique */
+  margin: 20px auto; /* Centrer le contenu */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Arial", sans-serif;
+  display: flex;
+  flex-wrap: wrap; /* Permet d'ajuster en colonne sur petit écran */
 }
 
 /* Style pour le titre */
 .Tuto h1 {
-    color: #333;
-    font-size: 24px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-    font-weight: bold;
+  color: #333;
+  font-size: 1.5em; /* Taille dynamique */
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* Style pour les éléments de liste */
 .Tuto li {
-    color: #555;
-    font-size: 18px;
-    margin: 5px 0;
+  color: #555;
+  font-size: 1em; /* Taille dynamique */
+  margin: 5px 0;
 }
 
 /* Style pour le paragraphe */
 .Tuto p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 16px;
-    margin-bottom: 15px;
+  color: #666;
+  line-height: 1.6;
+  font-size: 1em; /* Taille dynamique */
+  margin-bottom: 15px;
 }
 
 .illustration-list {
-    list-style-type: none; /* Enlève les puces */
-    padding: 0;
+  list-style-type: none; /* Enlève les puces */
+  padding: 0;
 }
 
 .illustration-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap; /* Permet une meilleure adaptation */
 }
 
 .illustration-list img {
-    width: 70px;
-    height: 70px;
-    margin-right: 10px; /* Espacement entre image et texte */
-    border-radius: 20px;
+  width: 70px;
+  height: auto; /* Conserve le ratio d'aspect */
+  margin-right: 10px; /* Espacement entre image et texte */
+  border-radius: 20px;
 }
 
 .board {
-    width: 50%; /* Taille de l'image */
-    height: auto;
-    margin-left: 250px; /* Décale l'image de 20 pixels vers la droite */
-    border-radius: 20px;
+  width: 100%; /* Image responsive */
+  height: auto;
+  margin: 0 auto; /* Centre l'image */
+  border-radius: 20px;
 }
 
 .text-zone {
-    background-color: #f4f4f4; /* Couleur de fond */
-    border: 2px solid #007bff; /* Bordure */
-    border-radius: 10px; /* Bords arrondis */
-    padding: 20px; /* Espacement intérieur */
-    margin: 20px 0 20px 0; /* Espacement au-dessus, en-dessous et à gauche */
-    max-width: 600px; /* Largeur maximale */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Ombre */
-    font-family: Arial, sans-serif; /* Police */
-    text-align: center; /* Alignement du texte */
+  background-color: #f4f4f4;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+  text-align: center;
 }
 
-  
-  .text-zone h2 {
-    color: #007bff; /* Couleur du titre */
-    margin-bottom: 15px; /* Espacement sous le titre */
-  }
-  
-  .text-zone p {
-    color: #333; /* Couleur du texte */
-    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
-  }
-  
- 
- 
- 
- 
-  h2 {
-    font-family: 'Arial', sans-serif; /* Police simple et moderne */
-    font-size: 2rem; /* Taille du texte */
-    color: #333; /* Couleur du texte */
-    text-align: center; /* Centrer le titre */
-    margin: 20px auto; /* Espacement au-dessus et en-dessous, centré */
-    padding: 10px 20px; /* Espacement interne */
-    border: 2px solid #007bff; /* Bordure encadrante de couleur bleu vif */
-    border-radius: 15px; /* Coins arrondis pour un design moderne */
-    background-color: #f4f4f4; /* Fond clair derrière le titre */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre subtile pour donner de la profondeur */
-    text-transform: uppercase; /* Met le texte en majuscule */
-    letter-spacing: 1.5px; /* Espacement entre les lettres pour un effet stylisé */
+.text-zone h2 {
+  color: #007bff;
+  margin-bottom: 15px;
 }
 
-  
+.text-zone p {
+  color: #333;
+  line-height: 1.6;
+}
 
+/* Sections flottantes */
+.Jour2,
+.Jour4,
+.Jour5 {
+  background-color: #f4f4f4;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 60%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-family: Arial, sans-serif;
+}
 
-
-
-
-
+/* Styles pour les petits écrans */
+@media (max-width: 768px) {
+  .Tuto {
+    flex-direction: column; /* Les éléments s'empilent */
+    padding: 10px; /* Réduit l'espace interne */
+  }
+  .illustration-list li {
+    flex-direction: column; /* Passe en colonne */
+    align-items: center;
+  }
+  .board {
+    width: 100%; /* Adapte l'image à la largeur */
+  }
+  .Jour2,
+  .Jour4,
+  .Jour5 {
+    position: static; /* Réinitialise la position */
+    margin: 10px auto; /* Centrer les sections */
+  }
+}
