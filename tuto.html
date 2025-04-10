@@ -321,6 +321,172 @@
   <a href="https://cssgradient.io/" class="btn">cssgradient</a>
 
 </div>
+<h2>Code </h2>
+<div class="code">
+  
+<P>
+  //const des notes
+
+  const int bL = 247;
+  const int c = 261;
+  const int d = 294;
+  const int e = 329;
+  const int f = 349;
+  const int fS = 370;
+  const int g = 391;
+  const int gS = 415;
+  const int a = 440;
+  const int aS = 455;
+  const int b = 494;
+  const int cH = 523;
+  const int cSH = 554;
+  const int dH = 587;
+  const int dSH = 622;
+  const int eH = 659;
+  const int fH = 698;
+  const int fSH = 740;
+  const int gH = 784;
+  const int gSH = 830;
+  const int aH = 880;
+  const int bH = 980;
+  
+  const int buzzerPin = 7;
+  const int buttonPin = 2;
+  const int buttonPin2 = 3;
+  
+  
+  //inclusion de la librairie servomoteur
+  #include <Servo.h>
+  Servo Servo0;
+  Servo Servo1;
+  Servo Servo2;
+  
+  //initialistation du programme
+  void setup() {
+    //Permet de display des informations dans le serial monitor
+    Serial.begin(9600);
+    //Sur la carte arduino, pins sur lesquelles sont branchés les servomoteurs
+    Servo0.attach(9);
+    Servo1.attach(10);
+    Servo2.attach(11);
+  
+    pinMode(buzzerPin, OUTPUT);
+    pinMode(buttonPin, INPUT);
+    pinMode(buttonPin2, INPUT);
+  }
+  
+  void loop() {
+  
+    //déclaration des variables analogues
+    const int val0 = analogRead(A0);
+    const int val1 = analogRead(A1);
+    const int val2 = analogRead(A2);
+  
+    //dval prends la valeur du digital read
+    int dVal1 = digitalRead(2);
+    int dVal2 = digitalRead(3);
+  
+  
+    //On modifie les variables pour leur donner une valeur maximale de 180,
+    //correspondant à l'angle du servomoteur
+    int mapVal0 = map(val0, 0, 1023, 0, 180);
+    int mapVal1 = map(val1, 0, 1023, 0, 180);
+    int mapVal2 = map(val2, 0, 1023, 0, 180);
+  
+    // on donne les valeurs des potentiomêtres aux servomoteurs pour qu'ils ce mettent dans la bonne position
+    Servo0.write(mapVal0);
+    delay(5);
+    Servo1.write(mapVal1);
+    delay(5);
+    Servo2.write(mapVal2);
+    delay(5);
+    
+  
+    // Serial.print("Valeur n°1 :");
+    // Serial.println(dVal1);
+    // Serial.print("Valeur n°2 :");
+    // Serial.println(dVal2);
+  
+    //Si bouton appui, son joué
+    if (digitalRead(2) == HIGH) {
+      section1();
+    }
+  
+    if (digitalRead(3) == HIGH) {
+      section2();
+    }
+  }
+  
+  void beep(int note, int duration) {
+  
+    tone(buzzerPin, note, duration);
+    delay(duration);
+  
+    noTone(buzzerPin);
+    delay(50);
+  }
+  
+  void section1() {
+    beep(c, 2500);
+    beep(g, 2500);
+    beep(cH, 2500);
+    delay(1500);
+  
+    beep(eH, 400);
+    beep(dSH, 2500);
+    delay(200);
+  
+    beep(g, 350);
+    beep(cH, 350);
+    beep(g, 350);
+    beep(cH, 350);
+    beep(g, 350);
+    beep(cH, 350);
+  
+    beep(g, 350);
+    beep(cH, 500);
+    delay(200);
+  
+    beep(c, 2500);
+    beep(g, 2500);
+    beep(cH, 2500);
+  
+    delay(1500);
+  
+    beep(dSH, 400);
+    beep(eH, 2500);
+  }
+  
+  void section2() {
+    beep(b, 150);
+    beep(fH, 150);
+    beep(fH, 150);
+    beep(fH, 150);
+    beep(eH, 170);
+    beep(dH, 150);
+    beep(cH, 170);
+    beep(g, 150);
+    delay(30);
+    beep(g, 120);
+    beep(c, 150);
+  
+  
+  }
+
+
+
+
+
+</P>
+
+
+
+</div>
+
+
+
+
+
 </body>
 
 </html>
